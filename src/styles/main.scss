@@ -1,0 +1,15 @@
+*, *:before, *:after {
+  position: relative;
+  box-sizing: border-box;
+}
+
+body, html {
+  display: block;
+  margin: 0;
+}
+
+.jumbotron {
+    height: 100vh;
+    text-align: center;
+    padding-top: 25%;
+}
