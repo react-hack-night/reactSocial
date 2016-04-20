@@ -19,7 +19,7 @@ class Insta extends React.Component {
         );
     });
 
-    let heading = '';
+    let heading = <div><h2>No Results Yet!!!</h2></div>;
 
     if(this.props.show) {
             heading = <div><h2>Instagram Results:</h2><hr /></div>;
