@@ -13,10 +13,20 @@ class Giphy extends React.Component {
             </div>
         )
       });
+
+      let heading = '';
+
+      if(this.props.show) {
+              heading = <div><h2>Giphy Results:</h2><hr /></div>;
+      }
     return (
-        <div className="row">
-            {gifs}
+        <div>
+            {heading}
+            <div className="row">
+                {gifs}
+            </div>
         </div>
+
     );
   }
 }

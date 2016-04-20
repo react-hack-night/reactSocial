@@ -18,10 +18,20 @@ class Insta extends React.Component {
             </div>
         );
     });
+
+    let heading = '';
+
+    if(this.props.show) {
+            heading = <div><h2>Instagram Results:</h2><hr /></div>;
+    }
     return (
-        <div className="row">
-            {pics}
+        <div>
+            {heading}
+            <div className="row">
+                {pics}
+            </div>
         </div>
+
     );
   }
 }

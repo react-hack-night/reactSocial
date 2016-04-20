@@ -54,9 +54,8 @@ class Main extends React.Component {
                   <input type="text" placeholder="Enter Your Favorite Hashtag, Bro" ref="hashInput" />
                   <Button onClick={this._handleClick.bind(this)}>Submit</Button>
             </Jumbotron>
-
-            <Insta hashtag={this.state.instagram} />
-            <Giphy hashtag={this.state.giphy} />
+            <Insta hashtag={this.state.instagram} show={this.state.instagram.length > 0}/>
+            <Giphy hashtag={this.state.giphy} show={this.state.giphy.length > 0}/>
         </div>
     );
   }
