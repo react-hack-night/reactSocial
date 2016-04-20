@@ -6,20 +6,21 @@ import {Row} from 'react-bootstrap';
 import {Col} from 'react-bootstrap';
 import {Jumbotron} from 'react-bootstrap';
 import {Form} from 'react-bootstrap';
-import Insta from './instagram'
+import Insta from './instagram';
+import Giphy from './giphy';
 
 class Main extends React.Component {
   constructor() {
       super();
 
       this.state = {
-          instagram: []
+          instagram: [],
+          giphy: []
       };
   }
 
   _handleClick(event) {
       var self = this;
-console.log(this.refs.hashInput.value)
     let api = 'https://api.instagram.com/v1/tags/'+ this.refs.hashInput.value +'/media/recent?access_token=37506794.1677ed0.2737d7b2a1494fd59bd3f340e36e79f6';
     fetch(api).then(response => {
         let res = response.json();
@@ -27,6 +28,21 @@ console.log(this.refs.hashInput.value)
             self.setState({instagram: data.data});
         })
     }).then(err => {console.log(err)})
+
+    const headers = new Headers();
+    headers.set('Content-Type', 'application/json');
+    const init = {
+      method: "GET",
+      headers: headers,
+      mode: "cors"
+    }
+    return fetch("http://api.giphy.com/v1/gifs/search?q="+ this.refs.hashInput.value +"&api_key=dc6zaTOxFJmzC&limit=9&fmt=json", init)
+    .then(function(response){
+      const json = response.json();
+      json.then(data => {
+          self.setState({giphy: data.data});
+      })
+    });
   }
 
   render() {
@@ -40,6 +56,7 @@ console.log(this.refs.hashInput.value)
             </Jumbotron>
 
             <Insta hashtag={this.state.instagram} />
+            <Giphy hashtag={this.state.giphy} />
         </div>
     );
   }
