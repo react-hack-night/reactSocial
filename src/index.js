@@ -5,12 +5,9 @@ import {Grid} from 'react-bootstrap';
 
 // Import styles like this:
 import './styles/main.scss';
-
-
-
-// Import dependencies like this:
 import Main from './components/main';
 
+import Insta from './components/instagram';
 
 class App extends React.Component {
   render() {
@@ -20,6 +17,7 @@ class App extends React.Component {
         </Grid>
     );
   }
+
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
