@@ -8,6 +8,7 @@ import {Jumbotron} from 'react-bootstrap';
 
 // Import dependencies like this:
 import Random from './components/random-component';
+import Giphy from './components/giphy.js';
 
 class App extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
       <Jumbotron>
           <h1>I heard React was good.</h1>
           <div><Random /></div>
+          <div><Giphy /></div>
       </Jumbotron>
     );
   }
