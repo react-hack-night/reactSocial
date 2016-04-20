@@ -8,6 +8,8 @@ import './styles/main.scss';
 import Main from './components/main';
 
 import Insta from './components/instagram';
+// Import dependencies like this:
+import Giphy from './components/giphy.js';
 
 class App extends React.Component {
   render() {
